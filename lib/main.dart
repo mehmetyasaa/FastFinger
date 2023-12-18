@@ -35,9 +35,6 @@ class _MyAppHomeState extends State<MyAppHome> {
   int step = 0;
   int score = 0;
   int lastTypeAt = 0;
-
-  //onChanged içerisine atamalık, kullanıcının textField içierisine girdiği kelimeleri console yazdırmak istiyorum
-
   String currentWord = '';
 
   void updateLastTypeAt() {
@@ -113,7 +110,10 @@ class _MyAppHomeState extends State<MyAppHome> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (step == 0) ...[
-              Text("Oyuna Hoş Geldiniz"),
+              Text(
+                "Oyuna Hoş Geldiniz",
+                style: TextStyle(fontSize: 24),
+              ),
               Container(
                 padding: EdgeInsets.all(20),
                 child: TextField(
@@ -122,7 +122,7 @@ class _MyAppHomeState extends State<MyAppHome> {
                   onChanged: onUserNameType,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: "İsmin Nedir Delikanlı",
+                    labelText: "İsminizi Giriniz",
                   ),
                 ),
               ),
@@ -145,7 +145,10 @@ class _MyAppHomeState extends State<MyAppHome> {
                 ),
               )
             ] else ...[
-              Text("Coronodan kaçamadın Scorun $typedCharsLenght "),
+              Text(
+                "Coronodan kaçamadın Scorun $typedCharsLenght ",
+                style: TextStyle(fontSize: 18),
+              ),
               ElevatedButton(
                   onPressed: resetGame,
                   child: Container(
